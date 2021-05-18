@@ -10,7 +10,7 @@
     <templates>
         <template>
             <template>Template_Draytek_160</template>
-            <name>Draytek Vigor 160 Template (v1.1)</name>
+            <name>Draytek Vigor 160 Template</name>
             <description>Template for the Draytek Vigor 160 VDSL Modem.</description>
             <groups>
                 <group>
@@ -26,7 +26,7 @@
                 </application>
             </applications>
             <items>
-				<item>
+		<item>
                     <name>xDSL Rx Rate (Attainable)</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>ADSL-LINE-MIB::adslAturCurrAttainableRate.4</snmp_oid>
@@ -86,7 +86,7 @@
                         </application>
                     </applications>
                 </item>
-				<item>
+		<item>
                     <name>xDSL Tx Attenuation</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>ADSL-LINE-MIB::adslAtucCurrAtn.4</snmp_oid>
@@ -109,7 +109,7 @@
                     <key>adslAtucCurrSnrMgn.4</key>
                     <delay>1m</delay>
                     <history>30d</history>
-                    <units>dBm</units>
+                    <units>dB</units>
                     <description>Noise Margin as seen by this ATU with respect to its received signal in tenth dB.</description>
                     <applications>
                         <application>
@@ -124,7 +124,7 @@
                     <key>adslAturCurrSnrMgn.4</key>
                     <delay>1m</delay>
                     <history>30d</history>
-                    <units>dBm</units>
+                    <units>dB</units>
                     <description>Noise Margin as seen by this ATU with respect to its received signal in tenth dB.</description>
                     <applications>
                         <application>
@@ -132,7 +132,7 @@
                         </application>
                     </applications>
                 </item>
-				<item>
+		<item>
                     <name>LAN 1 Status</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifOperStatus.12</snmp_oid>
@@ -148,7 +148,7 @@
                             <expression>{last(0)}&lt;&gt;1</expression>
                             <name>{HOSTNAME} LAN 1 is down</name>
                             <priority>HIGH</priority>
-                            <description>LAN port is down on Vigor 160</description>
+                            <description>LAN 1 port is down on Vigor 160</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -172,7 +172,7 @@
                         </step>
                     </preprocessing>
                 </item>
-				<item>
+		<item>
                     <name>LAN 1 Tx</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifOutOctets.12</snmp_oid>
@@ -192,7 +192,7 @@
                         </step>
                     </preprocessing>
                 </item>
-				<item>
+		<item>
                     <name>LAN 2 Status</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifOperStatus.13</snmp_oid>
@@ -232,7 +232,7 @@
                         </step>
                     </preprocessing>
                 </item>
-				<item>
+		<item>
                     <name>LAN 2 Tx</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifOutOctets.13</snmp_oid>
@@ -272,7 +272,7 @@
                         </trigger>
                     </triggers>
                 </item>
-				<item>
+		<item>
                     <name>WAN1 Rx</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifInOctets.4</snmp_oid>
@@ -312,7 +312,7 @@
                         </step>
                     </preprocessing>
                 </item>
-				<item>
+		<item>
                     <name>WAN3 Status</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifOperStatus.6</snmp_oid>
@@ -352,7 +352,7 @@
                         </step>
                     </preprocessing>
                 </item>
-				<item>
+		<item>
                     <name>WAN3 Tx</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifOutOctets.6</snmp_oid>
@@ -392,7 +392,7 @@
                         </trigger>
                     </triggers>
                 </item>
-				<item>
+		<item>
                     <name>WAN4 Rx</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifInOctets.7</snmp_oid>
@@ -432,7 +432,7 @@
                         </step>
                     </preprocessing>
                 </item>
-				<item>
+		<item>
                     <name>WAN5 Status</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifOperStatus.8</snmp_oid>
@@ -472,7 +472,7 @@
                         </step>
                     </preprocessing>
                 </item>
-				<item>
+		<item>
                     <name>WAN5 Tx</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifOutOctets.8</snmp_oid>
@@ -633,12 +633,12 @@
                 </graph_item>
             </graph_items>
         </graph>
-		<graph>
-			<name>VDSL Attenuation</name>
-			<graph_items>
-				<graph_item>
-					<sortorder>1</sortorder>
-                    <color>990000</color>
+	<graph>
+	    <name>VDSL Attenuation</name>
+	    <graph_items>
+		<graph_item>
+		    <sortorder>1</sortorder>
+                    <color>009900</color>
                     <yaxisside>RIGHT</yaxisside>
                     <item>
                         <host>Template_Draytek_160</host>
@@ -646,7 +646,7 @@
                     </item>
                 </graph_item>
                 <graph_item>
-					<sortorder>2</sortorder>
+		    <sortorder>2</sortorder>
                     <color>0000FF</color>
                     <yaxisside>RIGHT</yaxisside>
                     <item>
@@ -658,7 +658,7 @@
 		</graph>
         <graph>
             <name>VDSL SNR</name>
-			<graph_items>
+	    <graph_items>
                 <graph_item>
                     <sortorder>1</sortorder>
                     <color>009900</color>

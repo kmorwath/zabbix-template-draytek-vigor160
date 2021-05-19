@@ -3,6 +3,8 @@ Zabbix Template for Vigor 160
 
 Inspired by https://github.com/seangordon/Zabbix-Template-Draytek-130
 
+Tested on a Vigor 165 with firmware 4.2.3. Should work on the 166 too.
+
 Features:
 
 WAN1, WAN3, WAN4 and WAN5 status and Rx/Tx data are retrieved.

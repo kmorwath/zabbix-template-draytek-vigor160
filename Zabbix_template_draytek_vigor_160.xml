@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2021-05-19T13:13:19Z</date>
+    <date>2023-09-10T15:11:34Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -10,7 +10,7 @@
     <templates>
         <template>
             <template>Template_Draytek_160</template>
-            <name>Draytek Vigor 160 Template</name>
+            <name>Draytek Vigor 160 SNMP</name>
             <description>Template for the Draytek Vigor 160 VDSL Modem/Router line</description>
             <groups>
                 <group>
@@ -27,67 +27,10 @@
             </applications>
             <items>
                 <item>
-                    <name>xDSL Rx Actual Rate</name>
-                    <type>SNMP_AGENT</type>
-                    <snmp_oid>ADSL-LINE-MIB::adslAtucChanCurrTxRate.4</snmp_oid>
-                    <key>adslAtucChanCurrTxRate.4</key>
-                    <history>30d</history>
-                    <units>bps</units>
-                    <description>xDSL line actual receive speed</description>
-                    <applications>
-                        <application>
-                            <name>Network</name>
-                        </application>
-                    </applications>
-                </item>
-                <item>
-                    <name>xDSL Tx Attenuation</name>
+                    <name>xDSL Rx Attenuation</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>ADSL-LINE-MIB::adslAtucCurrAtn.4</snmp_oid>
                     <key>adslAtucCurrAtn.4</key>
-                    <history>30d</history>
-                    <units>dB</units>
-                    <description>xDSL line attenuation, upstream</description>
-                    <applications>
-                        <application>
-                            <name>Network</name>
-                        </application>
-                    </applications>
-                </item>
-                <item>
-                    <name>xSDL Tx SNR</name>
-                    <type>SNMP_AGENT</type>
-                    <snmp_oid>ADSL-LINE-MIB::adslAtucCurrSnrMgn.4</snmp_oid>
-                    <key>adslAtucCurrSnrMgn.4</key>
-                    <history>30d</history>
-                    <units>dB</units>
-                    <description>xDSL line SNR margin, upstream</description>
-                    <applications>
-                        <application>
-                            <name>Network</name>
-                        </application>
-                    </applications>
-                </item>
-                <item>
-                    <name>xDSL Tx Actual Rate</name>
-                    <type>SNMP_AGENT</type>
-                    <snmp_oid>ADSL-LINE-MIB::adslAturChanCurrTxRate.4</snmp_oid>
-                    <key>adslAturChanCurrTxRate.4</key>
-                    <history>30d</history>
-                    <units>Bps</units>
-                    <description>xDSL line speed, upstream</description>
-                    <applications>
-                        <application>
-                            <name>Network</name>
-                        </application>
-                    </applications>
-                </item>
-                <item>
-                    <name>xDSL Rx Attenuation</name>
-                    <type>SNMP_AGENT</type>
-                    <snmp_oid>ADSL-LINE-MIB::adslAturCurrAtn.4</snmp_oid>
-                    <key>adslAturCurrAtn.4</key>
-                    <history>30d</history>
                     <units>dB</units>
                     <description>xDSL line attenuation, downstream</description>
                     <applications>
@@ -99,11 +42,24 @@
                 <item>
                     <name>xDSL Rx Attainable Rate</name>
                     <type>SNMP_AGENT</type>
-                    <snmp_oid>ADSL-LINE-MIB::adslAturCurrAttainableRate.4</snmp_oid>
-                    <key>adslAturCurrAttainableRate.4</key>
-                    <history>30d</history>
+                    <snmp_oid>ADSL-LINE-MIB::adslAtucCurrAttainableRate.4</snmp_oid>
+                    <key>adslAtucCurrAttainableRate.4</key>
                     <units>bps</units>
                     <description>xDSL line maximum attainable speed</description>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>xDSL Rx PSD</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>ADSL-LINE-MIB::adslAtucCurrOutputPwr.4</snmp_oid>
+                    <key>adslAtucCurrOutputPwr.4</key>
+                    <value_type>FLOAT</value_type>
+                    <units>dbm</units>
+                    <description>Actual RX PSD</description>
                     <applications>
                         <application>
                             <name>Network</name>
@@ -114,10 +70,147 @@
                     <name>xDSL Rx SNR</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>ADSL-LINE-MIB::adslAturCurrSnrMgn.4</snmp_oid>
-                    <key>adslAturCurrSnrMgn.4</key>
-                    <history>30d</history>
+                    <key>adslAtucCurrSnrMgn.4</key>
                     <units>dB</units>
                     <description>xDSL line SNR margin, downstream</description>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>xDSL Tx Attenuation</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>ADSL-LINE-MIB::adslAturCurrAtn.4</snmp_oid>
+                    <key>adslAturCurrAtn.4</key>
+                    <units>dB</units>
+                    <description>xDSL line attenuation, upstream</description>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>xDSL Tx Attainable Rate</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>ADSL-LINE-MIB::adslAturCurrAttainableRate.4</snmp_oid>
+                    <key>adslAturCurrAttainableRate.4</key>
+                    <units>bps</units>
+                    <description>RX attainable speed</description>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>xDSL Tx PSD</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>ADSL-LINE-MIB::adslAturCurrOutputPwr.4</snmp_oid>
+                    <key>adslAturCurrOutputPwr.4</key>
+                    <value_type>FLOAT</value_type>
+                    <units>dbm</units>
+                    <description>Actual Tx PSD</description>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>xDSL Tx SNR</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>ADSL-LINE-MIB::adslAturCurrSnrMgn.4</snmp_oid>
+                    <key>adslAturCurrSnrMgn.4</key>
+                    <units>dB</units>
+                    <description>xDSL line SNR margin, upstream</description>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Processor load</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>HOST-RESOURCES-MIB::hrProcessorLoad.0</snmp_oid>
+                    <key>hrProcessorLoad.0</key>
+                    <units>%</units>
+                    <applications>
+                        <application>
+                            <name>General</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{avg(5m)}&gt;90</expression>
+                            <name>{HOSTNAME}  processor load too high</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>WAN 1 Rx errors</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>IF-MIB::ifInErrors.4</snmp_oid>
+                    <key>ifInErrors.4</key>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>WAN 3 Rx errors</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>IF-MIB::ifInErrors.6</snmp_oid>
+                    <key>ifInErrors.6</key>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>WAN 4 Rx errors</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>IF-MIB::ifInErrors.7</snmp_oid>
+                    <key>ifInErrors.7</key>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>WAN 5 Rx errors</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>IF-MIB::ifInErrors.8</snmp_oid>
+                    <key>ifInErrors.8</key>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>LAN 1 Rx errors</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>IF-MIB::ifInErrors.12</snmp_oid>
+                    <key>ifInErrors.12</key>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>LAN 2 Rx errors</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>IF-MIB::ifInErrors.13</snmp_oid>
+                    <key>ifInErrors.13</key>
                     <applications>
                         <application>
                             <name>Network</name>
@@ -129,8 +222,7 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifInOctets.4</snmp_oid>
                     <key>ifInOctects.4</key>
-                    <history>30d</history>
-                    <units>Bps</units>
+                    <units>bps</units>
                     <applications>
                         <application>
                             <name>Network</name>
@@ -140,6 +232,10 @@
                         <step>
                             <type>CHANGE_PER_SECOND</type>
                             <params/>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -148,8 +244,7 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifInOctets.6</snmp_oid>
                     <key>ifInOctects.6</key>
-                    <history>30d</history>
-                    <units>Bps</units>
+                    <units>bps</units>
                     <applications>
                         <application>
                             <name>Network</name>
@@ -159,6 +254,10 @@
                         <step>
                             <type>CHANGE_PER_SECOND</type>
                             <params/>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -167,8 +266,7 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifInOctets.7</snmp_oid>
                     <key>ifInOctects.7</key>
-                    <history>30d</history>
-                    <units>Bps</units>
+                    <units>bps</units>
                     <applications>
                         <application>
                             <name>Network</name>
@@ -178,6 +276,10 @@
                         <step>
                             <type>CHANGE_PER_SECOND</type>
                             <params/>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -186,8 +288,7 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifInOctets.8</snmp_oid>
                     <key>ifInOctects.8</key>
-                    <history>30d</history>
-                    <units>Bps</units>
+                    <units>bps</units>
                     <applications>
                         <application>
                             <name>Network</name>
@@ -197,6 +298,10 @@
                         <step>
                             <type>CHANGE_PER_SECOND</type>
                             <params/>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -205,8 +310,7 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifInOctets.12</snmp_oid>
                     <key>ifInOctects.12</key>
-                    <history>30d</history>
-                    <units>Bps</units>
+                    <units>bps</units>
                     <applications>
                         <application>
                             <name>Network</name>
@@ -217,6 +321,10 @@
                             <type>CHANGE_PER_SECOND</type>
                             <params/>
                         </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8</params>
+                        </step>
                     </preprocessing>
                 </item>
                 <item>
@@ -224,8 +332,7 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifInOctets.13</snmp_oid>
                     <key>ifInOctects.13</key>
-                    <history>30d</history>
-                    <units>Bps</units>
+                    <units>bps</units>
                     <applications>
                         <application>
                             <name>Network</name>
@@ -235,6 +342,10 @@
                         <step>
                             <type>CHANGE_PER_SECOND</type>
                             <params/>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -371,12 +482,77 @@
                     </triggers>
                 </item>
                 <item>
+                    <name>WAN 1 Tx errors</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>IF-MIB::ifOutErrors.4</snmp_oid>
+                    <key>ifOutErrors.4</key>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>WAN 3 Tx errors</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>IF-MIB::ifOutErrors.6</snmp_oid>
+                    <key>ifOutErrors.6</key>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>WAN 4 Tx errors</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>IF-MIB::ifOutErrors.7</snmp_oid>
+                    <key>ifOutErrors.7</key>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>WAN 5 Tx errors</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>IF-MIB::ifOutErrors.8</snmp_oid>
+                    <key>ifOutErrors.8</key>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>LAN 1 Tx errors</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>IF-MIB::ifOutErrors.12</snmp_oid>
+                    <key>ifOutErrors.12</key>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>LAN 2 Tx errors</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>IF-MIB::ifOutErrors.13</snmp_oid>
+                    <key>ifOutErrors.13</key>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
                     <name>WAN1 Tx</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifOutOctets.4</snmp_oid>
                     <key>ifOutOctects.4</key>
-                    <history>30d</history>
-                    <units>Bps</units>
+                    <units>bps</units>
                     <applications>
                         <application>
                             <name>Network</name>
@@ -386,6 +562,10 @@
                         <step>
                             <type>CHANGE_PER_SECOND</type>
                             <params/>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -394,8 +574,7 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifOutOctets.6</snmp_oid>
                     <key>ifOutOctects.6</key>
-                    <history>30d</history>
-                    <units>Bps</units>
+                    <units>bps</units>
                     <applications>
                         <application>
                             <name>Network</name>
@@ -405,6 +584,10 @@
                         <step>
                             <type>CHANGE_PER_SECOND</type>
                             <params/>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -413,8 +596,7 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifOutOctets.7</snmp_oid>
                     <key>ifOutOctects.7</key>
-                    <history>30d</history>
-                    <units>Bps</units>
+                    <units>bps</units>
                     <applications>
                         <application>
                             <name>Network</name>
@@ -425,6 +607,10 @@
                             <type>CHANGE_PER_SECOND</type>
                             <params/>
                         </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8</params>
+                        </step>
                     </preprocessing>
                 </item>
                 <item>
@@ -432,7 +618,6 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifOutOctets.8</snmp_oid>
                     <key>ifOutOctects.8</key>
-                    <history>30d</history>
                     <units>Bps</units>
                     <applications>
                         <application>
@@ -451,8 +636,7 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifOutOctets.12</snmp_oid>
                     <key>ifOutOctects.12</key>
-                    <history>30d</history>
-                    <units>Bps</units>
+                    <units>bps</units>
                     <applications>
                         <application>
                             <name>Network</name>
@@ -463,6 +647,10 @@
                             <type>CHANGE_PER_SECOND</type>
                             <params/>
                         </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8</params>
+                        </step>
                     </preprocessing>
                 </item>
                 <item>
@@ -470,8 +658,7 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>IF-MIB::ifOutOctets.13</snmp_oid>
                     <key>ifOutOctects.13</key>
-                    <history>30d</history>
-                    <units>Bps</units>
+                    <units>bps</units>
                     <applications>
                         <application>
                             <name>Network</name>
@@ -481,6 +668,10 @@
                         <step>
                             <type>CHANGE_PER_SECOND</type>
                             <params/>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>8</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -510,19 +701,167 @@
                         </trigger>
                     </triggers>
                 </item>
+                <item>
+                    <name>xDSL Rx Actual Rate</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>VDSL2-LINE-MIB::xdsl2ChStatusActDataRate.4.xtuc</snmp_oid>
+                    <key>xdsl2ChStatusActDataRate.4.xtuc</key>
+                    <units>bps</units>
+                    <description>xDSL line actual receive speed</description>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>xDSL Tx Actual Rate</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>VDSL2-LINE-MIB::xdsl2ChStatusActDataRate.4.xtur</snmp_oid>
+                    <key>xdsl2ChStatusActDataRate.4.xtur</key>
+                    <units>bps</units>
+                    <description>xDSL line speed, upstream</description>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>xDSL Rx Actual delay</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>VDSL2-LINE-MIB::xdsl2ChStatusActDelay.4.xtuc</snmp_oid>
+                    <key>xdsl2ChStatusActDelay.4.xtuc</key>
+                    <units>ms</units>
+                    <description>Actual delay downstream</description>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>xDSL TX Actual delay</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>VDSL2-LINE-MIB::xdsl2ChStatusActDelay.4.xtur</snmp_oid>
+                    <key>xdsl2ChStatusActDelay.4.xtur</key>
+                    <units>ms</units>
+                    <description>Actual delay upstream</description>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>xDSL Rx INP</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>VDSL2-LINE-MIB::xdsl2ChStatusActInp.4.xtuc</snmp_oid>
+                    <key>xdsl2ChStatusActInp.4.xtuc</key>
+                    <description>G.INP downstream</description>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>xDSL Tx INP</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>VDSL2-LINE-MIB::xdsl2ChStatusActInp.4.xtur</snmp_oid>
+                    <key>xdsl2ChStatusActInp.4.xtur</key>
+                    <description>G.INP upstream</description>
+                    <applications>
+                        <application>
+                            <name>Network</name>
+                        </application>
+                    </applications>
+                </item>
             </items>
         </template>
     </templates>
     <graphs>
         <graph>
-            <name>Actual Tx Rates</name>
+            <name>Errors</name>
             <graph_items>
                 <graph_item>
                     <sortorder>1</sortorder>
-                    <color>009900</color>
+                    <color>1A7C11</color>
                     <item>
                         <host>Template_Draytek_160</host>
-                        <key>adslAturChanCurrTxRate.4</key>
+                        <key>ifInErrors.12</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>ifOutErrors.12</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>ifInErrors.13</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>A54F10</color>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>ifOutErrors.13</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>5</sortorder>
+                    <color>FC6EA3</color>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>ifInErrors.4</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>6</sortorder>
+                    <color>6C59DC</color>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>ifOutErrors.4</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>7</sortorder>
+                    <color>AC8C14</color>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>ifOutErrors.6</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>8</sortorder>
+                    <color>611F27</color>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>ifInErrors.7</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>9</sortorder>
+                    <color>F230E0</color>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>ifInErrors.8</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>10</sortorder>
+                    <color>5CCD18</color>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>ifOutErrors.8</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -572,6 +911,19 @@
             </graph_items>
         </graph>
         <graph>
+            <name>Processor load</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>hrProcessorLoad.0</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
             <name>WAN1 Traffic</name>
             <graph_items>
                 <graph_item>
@@ -594,45 +946,109 @@
             </graph_items>
         </graph>
         <graph>
-            <name>WAN Attainable vs. Actual Rx Rates</name>
-            <graph_items>
-                <graph_item>
-                    <sortorder>1</sortorder>
-                    <color>009900</color>
-                    <calc_fnc>ALL</calc_fnc>
-                    <item>
-                        <host>Template_Draytek_160</host>
-                        <key>adslAtucChanCurrTxRate.4</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>2</sortorder>
-                    <color>0000FF</color>
-                    <calc_fnc>ALL</calc_fnc>
-                    <item>
-                        <host>Template_Draytek_160</host>
-                        <key>adslAturCurrAttainableRate.4</key>
-                    </item>
-                </graph_item>
-            </graph_items>
-        </graph>
-        <graph>
             <name>xDSL Attenuation</name>
             <graph_items>
                 <graph_item>
                     <sortorder>1</sortorder>
                     <color>009900</color>
+                    <calc_fnc>ALL</calc_fnc>
                     <item>
                         <host>Template_Draytek_160</host>
-                        <key>adslAtucCurrAtn.4</key>
+                        <key>adslAturCurrAtn.4</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>2</sortorder>
                     <color>0000FF</color>
+                    <calc_fnc>ALL</calc_fnc>
                     <item>
                         <host>Template_Draytek_160</host>
-                        <key>adslAturCurrAtn.4</key>
+                        <key>adslAtucCurrAtn.4</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>xDSL INP</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>xdsl2ChStatusActInp.4.xtuc</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>xdsl2ChStatusActInp.4.xtur</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>xDSL power</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>adslAtucCurrOutputPwr.4</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>adslAturCurrOutputPwr.4</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>xDSL RX/TX Rates</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>F63100</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>xdsl2ChStatusActDataRate.4.xtuc</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>2774A4</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>adslAtucCurrAttainableRate.4</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>A54F10</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>xdsl2ChStatusActDataRate.4.xtur</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>FC6EA3</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template_Draytek_160</host>
+                        <key>adslAturCurrAttainableRate.4</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -643,17 +1059,19 @@
                 <graph_item>
                     <sortorder>1</sortorder>
                     <color>009900</color>
+                    <calc_fnc>ALL</calc_fnc>
                     <item>
                         <host>Template_Draytek_160</host>
-                        <key>adslAturCurrSnrMgn.4</key>
+                        <key>adslAtucCurrSnrMgn.4</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>2</sortorder>
                     <color>0000FF</color>
+                    <calc_fnc>ALL</calc_fnc>
                     <item>
                         <host>Template_Draytek_160</host>
-                        <key>adslAtucCurrSnrMgn.4</key>
+                        <key>adslAturCurrSnrMgn.4</key>
                     </item>
                 </graph_item>
             </graph_items>

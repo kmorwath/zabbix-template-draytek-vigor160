@@ -14,12 +14,7 @@ LAN1 and LAN2 ports status and Rx/Tx data are retrieved separately.
 
 Attenuation and SNR for both directions.
 
-Attainable and actual dowload speed
-
-Actual upload speed only. As of firmware 4.2.3
-ADSL-LINE-MIB::adslAtucCurrAttainableRate.4 is always 0 and
-ADSL-LINE-MIB::adslAturCurrAttainableRate.4 reports the dowload
-speed instead.
+Attainable and actual dowload/upload speeds - using firmware 4.2.5 or later. Firmware 4.2.3 didn't report upload speeds.
 
 Graphs for WAN1, LAN1 and LAN2 Rx/Tx, SNR, attenuation and RX
 attainable/actual speed.
